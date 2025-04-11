@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 169</title>
+    <style>
+        header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .article,
+        .sidebar {
+            background-color: beige;
+            color: black;
+            padding: 10px;
+
+        }
+
+        body {
+            background-color: wheat;
+            display: grid;
+            height: 100vh;
+            gap: 10px;
+            grid-template-columns: 100px auto;
+            grid-template-rows: 100px 300px 100px;
+            grid-template-areas:
+                "head head "
+                "side main "
+                "foot foot "
+            ;
+        }
+
+        header {
+            grid-area: head;
+
+        }
+
+        .article {
+            grid-area: main;
+        }
+
+        .sidebar {
+            grid-area: side;
+
+        }
+
+        footer {
+            grid-area: foot;
+            background-color: black;
+            color: aliceblue;
+        }
+
+        @media (min-width:768px) and (orientation:landscape) {
+            body {
+                background-color: wheat;
+                display: grid;
+                height: 100vh;
+                gap: 10px;
+                grid-template-columns: 100px auto;
+                grid-template-rows: 100px 300px 100px;
+                grid-template-areas:
+                    "head head "
+                    "side main "
+                    "foot foot "
+                ;
+            }
+        }
+
+        @media (min-width:1920px) {
+            .sidebar {
+                display: none;
+            }
+
+            body {
+                background-color: azure;
+                display: grid;
+                height: 100vh;
+                gap: 10px;
+                grid-template-columns: 100px auto;
+                grid-template-rows: 100px 300px 100px;
+                grid-template-areas:
+                    "head head "
+                    "main main "
+                    "foot foot "
+                ;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div class="sidebar">
+
+        <p>Side bar</p>
+    </div>
+
+    <div class="article">
+        <p>Content</p>
+    </div>
+    </div>
+    <footer>
+        <p>Footer</p>
+    </footer>
+
+</body>
